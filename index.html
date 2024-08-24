@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="contenedor">
+        <section class="contenedor__logo">
+            <img class="logo__imagen" src="assets/logoAlura.png" alt="Imagen del logo de Alura">
+        </section>
+
+        <section class="contenedor__texto">
+            <textarea class="texto__entrada" name="" id="" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+            <div>
+                <h6 class="texto__informacion"> <img src="assets/simboloExclamacion.png" alt="Símbolo de advertencia"> Solo letras minúsculas y sin acento</h6>
+            </div>
+            <div class="texto__botones">
+                <button class="boton boton--encriptar" onclick="btnEncriptar()">Encriptar</button>
+                <button class="boton boton--desencriptar" onclick="btnDesencriptar()">Desencriptar</button>
+            </div>
+        </section>
+
+        <section class="contenedor__encriptado">
+            <textarea class="encriptado__mensaje" name="" id="" cols="20" rows="10" placeholder="Ningún mensaje fue encontrado :(" readonly></textarea>
+            <button class="encriptado__boton-copiar" onclick="copiar()">Copiar</button>                
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <p class="pie__texto">Desarrollado por Nicolás Ortiz</p>
+        <div class="pie__enlaces">
+            <a href="https://github.com/NicoXtreme"><img src="assets/github.png" width="30px" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/nicol%C3%A1s-francisco-ortiz-luna-a5586b1ab/"><img src="assets/linkedin.png" width="30px" alt="LinkedIn"></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

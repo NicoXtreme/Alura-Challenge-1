@@ -1,0 +1,265 @@
+/* Fuentes y colores */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --color-primario: #F3F5FC;
+    --color-secundario: #0A3871;
+    --color-terciario: #FFFFFF;
+    --color-extra: #D8DFE8;
+    --color-extra2: #052051;
+    --color-texto-advertencia: #495057;
+    --color-texto-encriptado: #343A40;
+    --fuente-inter: "Inter", sans-serif;
+}
+
+html {
+    font-size: 1rem; 
+}
+
+/* Estilos generales */
+* {
+    font-family: var(--fuente-inter);
+    font-weight: 400;
+    font-size: 2rem; 
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor__logo {
+    width: 7vw;
+    padding-left: 3.125rem; 
+}
+
+.logo__imagen {
+    padding-top: 2.5rem; 
+    width: 100%;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+}
+
+.contenedor__texto {
+    width: 55vw;
+    margin-top: 9.375rem; 
+    margin-left: 5.625rem; 
+    margin-bottom: 1.875rem; 
+}
+
+.texto__entrada {
+    border: none;
+    color: var(--color-secundario);
+    text-transform: lowercase;
+    resize: none;
+    overflow-y: auto;
+    width: 100%;
+    height: 35rem; 
+}
+
+textarea::-webkit-scrollbar {
+    width: 0.1875rem; 
+}
+
+textarea::-webkit-scrollbar-track {
+    background: var(--color-extra); 
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: var(--color-secundario); 
+    border-radius: 0.625rem; 
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-extra2); 
+}
+
+.texto__entrada::placeholder {
+    color: var(--color-secundario);
+}
+
+.texto__entrada:focus, .encriptado__mensaje:focus {
+    outline: none;
+}
+
+.encriptado__mensaje {
+    width: 25rem; 
+    height: 43.75rem; 
+    resize: none;
+    background: var(--color-terciario) url(assets/muneco.png) no-repeat center 11.25rem;
+    border: none;
+    border-radius: 1.5rem; 
+    color: var(--color-secundario);
+    margin: 1.25rem 0;
+    padding-left: 1.25rem; 
+    box-shadow: 0 1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.08); 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.encriptado__mensaje::placeholder {
+    color: var(--color-texto-encriptado);
+    padding-top: 31.25rem;
+    margin-inline: 0.9375rem; 
+    text-align: center;
+    font-size: 1.5rem; 
+    font-weight: 700;
+    line-height: 1.2; 
+}
+
+.encriptado__mensaje[readonly] {
+    color: var(--color-texto-encriptado);
+    cursor: default; 
+}
+
+.texto__botones {
+    display: flex;
+    margin-top: 1.125rem;
+    justify-content: center;
+}
+
+.boton {
+    border-radius: 1.5rem; 
+    cursor: pointer;
+    height: 4.1875rem;
+    width: 20.5rem;
+    text-align: center;
+    font-size: 1rem; 
+}
+
+.boton--encriptar {
+    background-color: var(--color-secundario);
+    border: 1px solid var(--color-secundario);
+    color: var(--color-terciario);
+}
+
+.boton--desencriptar {
+    background-color: var(--color-extra);
+    border: 1px solid var(--color-secundario);
+    color: var(--color-secundario);
+    margin-left: 1.875rem; 
+}
+
+.encriptado__boton-copiar {
+    display: none; 
+    border: 1px solid var(--color-secundario);
+    background-color: var(--color-extra);
+    color: var(--color-secundario);
+    width: 20.5rem; 
+    height: 4.1875rem;
+    border-radius: 1.5rem; 
+    margin-top: 1.5rem; 
+    text-align: center;
+    font-size: 1rem; 
+    cursor: pointer;
+}
+
+.texto__informacion {
+    color: var(--color-texto-advertencia);
+    font-size: 0.75rem;
+}
+
+h6 {
+    display: flex;
+    align-items: center;
+    gap: 0.4375rem;
+}
+
+.contenedor__encriptado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 38vw;
+}
+
+.pie {
+    color: var(--color-extra);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secundario);
+    padding-top: 0.25rem; 
+    font-size: 1.6875rem; 
+}
+
+.pie__texto {
+    margin: 0;
+}
+
+.pie__enlaces {
+    display: flex;
+    gap: 1.875rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedor__texto, .contenedor__encriptado {
+        width: 90%;
+        margin: 1rem 0;
+    }
+
+    .encriptado__mensaje {
+        width: 90%; 
+        margin: 1.5rem 0;
+    }
+
+    .texto__botones {
+        justify-content: center;
+        flex-direction: row;
+        gap: 1rem;
+        width: 90%;
+    }
+
+    .boton--desencriptar {
+        margin-left: 0;
+    }
+
+    .encriptado__boton-copiar {
+        display: block;
+        width: 90%;
+        margin-top: 1.5rem; 
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedor__texto, .contenedor__encriptado {
+        width: 80%;
+        margin: 1.5rem 0;
+    }
+
+    .encriptado__mensaje {
+        width: 80%; 
+        margin: 1.5rem 0;
+    }
+
+    .texto__botones {
+        justify-content: center; 
+        flex-direction: row; 
+        gap: 1rem;
+        width: 80%;
+    }
+
+    .boton--desencriptar {
+        margin-left: 0; 
+    }
+
+    .encriptado__boton-copiar {
+        display: block;
+        width: 80%; 
+        margin-top: 1.5rem; 
+    }
+}
